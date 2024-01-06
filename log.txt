@@ -1,0 +1,69 @@
+➜  new-player npx zkgraph compile
+7:20:22 PM [zkGraph] [*]5094 lines in /Users/udhaykumar/zk_boys/new-player/build/zkgraph_full.wat
+7:20:22 PM [zkGraph] [+] Output written to `/Users/udhaykumar/zk_boys/new-player/build` folder.
+7:20:22 PM [zkGraph] [+] COMPILATION SUCCESS!
+
+➜  new-player npx zkgraph exec   
+Missing required args for command `exec <blockId>`
+➜  new-player npx zkgraph exec 5018485
+7:21:49 PM [zkGraph] [*] Run zkgraph on block 5018485
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+7:21:51 PM [zkGraph] [+] ZKGRAPH STATE OUTPUT: c6ec2a8534409449f9b94b438c85a1e1de7a736a
+
+➜  new-player npx zkgraph prove       
+Missing required args for command `prove <blockId> <expectedStateStr>`
+➜  new-player npx zkgraph prove 5018485 c6ec2a8534409449f9b94b438c85a1e1de7a736a
+7:22:51 PM [zkGraph] >> PROVE: PRETEST MODE
+7:22:51 PM [zkGraph] >> PROVE: TEST MODE DOESN'T OUTPUT PROOF FILE
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+7:22:52 PM [zkGraph] [+] ZKWASM MOCK EXECUTION SUCCESS!
+7:22:52 PM [zkGraph] [+] READY FOR PROVE MODE: npx zkgraph prove <block id> <expected state> --prove
+➜  new-player npx zkgraph prove 5018485 c6ec2a8534409449f9b94b438c85a1e1de7a736a --prove
+7:23:34 PM [zkGraph] >> PROVE: PROVE MODE
+7:23:34 PM [zkGraph] >> PROVE: REQUIRE FINISH SETUP FIRST
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+✔ You are going to publish a Prove request to the Sepolia testnet, which would require 0.005 SepoliaETH. Proceed? … yes
+7:23:46 PM [zkGraph] [+] Prove Request Transaction Sent: 0x7c4a8a83608021d0ae7dc75465b60d234604a76a509a4fe77add682a9b6f35e8, Waiting for Confirmation
+7:24:03 PM [zkGraph] [+] Transaction Confirmed. Creating Prove Task
+7:26:22 PM [zkGraph] [+] PROVE TASK FAILED. 
+
+➜  new-player 
