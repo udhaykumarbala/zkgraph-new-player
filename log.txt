@@ -66,4 +66,116 @@ Missing required args for command `prove <blockId> <expectedStateStr>`
 7:24:03 PM [zkGraph] [+] Transaction Confirmed. Creating Prove Task
 7:26:22 PM [zkGraph] [+] PROVE TASK FAILED. 
 
-➜  new-player 
+Success:
+
+➜  new-player git:(main) npx zkgraph compile      
+9:42:15 AM [zkGraph] [*]5542 lines in /Users/udhaykumar/zk_boys/new-player/build/zkgraph_full.wat
+9:42:15 AM [zkGraph] [+] Output written to `/Users/udhaykumar/zk_boys/new-player/build` folder.
+9:42:15 AM [zkGraph] [+] COMPILATION SUCCESS!
+
+➜  new-player git:(main) npx zkgraph setup  
+9:42:34 AM [zkGraph] >> SET UP
+9:42:35 AM [zkGraph] [*] IMAGE MD5: EDF4E72133CE89E5EF0401451064E1E8
+✔ You are going to publish a Setup request to the Sepolia testnet, which would require 0.005 SepoliaETH. Proceed? … yes
+
+9:42:42 AM [zkGraph] [+] Setup Request Transaction Sent: 0x23bd29e5674bb334ff81e811b30b2f612ceecbfc6f71022cc7088926abed752a, Waiting for Confirmation
+9:42:52 AM [zkGraph] [+] Transaction Confirmed. Creating Setup Task
+9:42:53 AM [zkGraph] [+] SETUP TASK STARTED. TASK ID: 659a24c581365a3b55438dc5
+[*] Please wait for image set up... (estimated: 1-5 min) 
+
+[*] Task submit time: 2024-01-07T04:12:53.48Z
+[*] Process started: 2024-01-07T04:12:56.874Z
+[*] Process finished: 2024-01-07T04:12:57.187Z
+[*] Pending time: 0 min 3.394 sec
+[*] Running time: 0 min 0.313 sec
+[+] SET UP SUCCESS 
+
+➜  new-player git:(main) 
+➜  new-player git:(main) npx zkgraph exec 5018485 
+9:43:06 AM [zkGraph] [*] Run zkgraph on block 5018485
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+9:43:07 AM [zkGraph] [+] ZKGRAPH STATE OUTPUT: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca
+
+➜  new-player git:(main) npx zkgraph prove 5018485 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca       
+9:43:20 AM [zkGraph] >> PROVE: PRETEST MODE
+9:43:20 AM [zkGraph] >> PROVE: TEST MODE DOESN'T OUTPUT PROOF FILE
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+9:43:21 AM [zkGraph] [+] ZKWASM MOCK EXECUTION SUCCESS!
+9:43:21 AM [zkGraph] [+] READY FOR PROVE MODE: npx zkgraph prove <block id> <expected state> --prove
+➜  new-player git:(main) npx zkgraph prove 5018485 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca --prove
+9:43:35 AM [zkGraph] >> PROVE: PROVE MODE
+9:43:35 AM [zkGraph] >> PROVE: REQUIRE FINISH SETUP FIRST
+[*] No storage DS provided, skip...
+[*] Defined Data Sources - Event:
+    (0) Address: 0xc6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Event Sigs: [
+  '0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75'
+] 
+
+[*] 65 receipts fetched
+[*] 1 event matched
+        Tx[0]Event[0] |--addr : c6ec2a8534409449f9b94b438c85a1e1de7a736a 
+        Tx[0]Event[0] |--arg#0: 52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75 
+        Tx[0]Event[0] |--arg#1: 000000000000000000000000f98981628e50d9b80c7a769116609787f94770ca 
+        Tx[0]Event[0] |--data :  
+
+✔ You are going to publish a Prove request to the Sepolia testnet, which would require 0.005 SepoliaETH. Proceed? … yes
+9:43:55 AM [zkGraph] [+] Prove Request Transaction Sent: 0x78281665071cfad19208ac0e74e809c07aa81c3d00f998822be8f6a485737a22, Waiting for Confirmation
+9:44:04 AM [zkGraph] [+] Transaction Confirmed. Creating Prove Task
+9:44:05 AM [zkGraph] [+] PROVE TASK STARTED. TASK ID: 659a250b81365a3b55438df0
+9:44:05 AM [zkGraph] [+] WAITING FOR PROVE RESULT. ABOUT 3 TO 5 MINUTED
+[+] PROVE SUCCESS! 
+
+[*] Task submit time: 2024-01-07T04:14:03.575Z
+[*] Process started: 2024-01-07T04:14:18.011Z
+[*] Process finished: 2024-01-07T04:15:00.445Z
+[*] Pending time: 0 min 14.436 sec
+[*] Running time: 0 min 42.434 sec
+
+9:45:00 AM [zkGraph] [+] Proof written to /Users/udhaykumar/zk_boys/new-player/build/proof_659a250b81365a3b55438df0.txt.
+
+➜  new-player git:(main) npx zkgraph upload       
+9:46:32 AM [zkGraph] >> UPLOAD
+9:46:39 AM [zkGraph] [+] IPFS UPLOAD SUCCESS!
+9:46:39 AM [zkGraph] [+] IPFS HASH: QmPu8rX4tXNY3N5TyQ4arZtKbjGEY6thC7RtV8xfEcbGqH
+➜  new-player git:(main) npx zkgraph deploy
+➜  new-player git:(main) npx zkgraph publish QmPu8rX4tXNY3N5TyQ4arZtKbjGEY6thC7RtV8xfEcbGqH 0.005
+9:47:58 AM [zkGraph] >> PUBLISH ZKGRAPH
+[*] Please wait for publish tx... (estimated: 30 sec) 
+
+[+] ZKGRAPH PUBLISHED SUCCESSFULLY! 
+
+[*] Transaction confirmed in block 5037697 on sepolia
+[*] Transaction hash: 0x284f939810c6a2794bf6d4bf60e5bb5c1ec02ebca01aa85d28cf4594929bb11e 
+
+9:48:14 AM [zkGraph] [*] PUBLISH TX HASH: 0x284f939810c6a2794bf6d4bf60e5bb5c1ec02ebca01aa85d28cf4594929bb11e
+➜  new-player git:(main) npx zkgraph verify 659a250b81365a3b55438df0
+9:49:47 AM [zkGraph] >> VERIFY PROOF ONCHAIN
+========================================================================================
+9:49:51 AM [zkGraph] >> VERIFY PROOF ONCHAIN SUCCESS
