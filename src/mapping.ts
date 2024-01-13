@@ -2,7 +2,7 @@
 import { require } from "@hyperoracle/zkgraph-lib";
 import { Bytes, Block, Event, Address } from "@hyperoracle/zkgraph-lib";
 
-let addr = Bytes.fromHexString('0xC6Ec2a8534409449f9b94B438C85A1e1dE7a736a');
+let addr = Bytes.fromHexString('0x90183Ca84c58e9126D2EE925715875c13d103962');
 let esig_new_player = Bytes.fromHexString("0x52e92d4898337244a39bd42674ac561eadfd3959e947deec1c0ab82dd58b5a75");
 
 export function handleBlocks(blocks: Block[]): Bytes {
@@ -33,15 +33,19 @@ export function handleBlocks(blocks: Block[]): Bytes {
 
   // set state to the address of the 1st (matched) event, demo purpose only.
 
+  let isNewPlayer = false;
+
   for (let i = events.length - 1; i >= 0; i--) {
     if (
       (events[i].address == addr) &&
       events[i].esig == esig_new_player
     ) {
 
-      newPlayer = Address.fromString(events[i].topic1.toHexString());
+      isNewPlayer = true;
     }
   }
 
-  return newPlayer
+  require(isNewPlayer);
+
+  return Bytes.fromHexString("c0406226").padEnd(32);
 }
